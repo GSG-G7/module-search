@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const nodefetch = require('node-fetch');
 const path = require('path');
 
 const app = express();
@@ -23,6 +24,17 @@ app.engine(
 
 app.get('/', (req, res) => {
   res.render("home")
+})
+
+app.post('/search', (req, res) => {
+  const npmModule = req.body.inputValue;
+  const url = `https://libraries.io/api/NPM/${npmModule}?api_key=9d6daf8cc3a087418203a84deaf6164d`;
+  nodefetch(url)
+    .then(res => res.json())
+    .then(res => console.log(res.description))
+    .catch(err => console.log(err));
+
+
 })
 
 
