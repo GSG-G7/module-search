@@ -4,7 +4,7 @@ const { getData } = require("./request");
 const express = require("express");
 const router = express.Router();
 
-router.post("/", getData);
+router.post("/search", getData);
 router.use(clientError);
 router.use(serverError);
 
