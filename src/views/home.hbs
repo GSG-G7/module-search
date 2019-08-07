@@ -1,14 +1,29 @@
-<section class="container">
-<form action="/search" method="POST" >
-  <input type="text" name="input" class="input">
-  <input type="submit" value="search" name="submit" class="btn">
-</form>
-</section>
+<main class="main">
 
-{{#if result}}
-<ul>
+  <section class="container">
+    <form action="/search" method="POST">
+      <input type="text" name="input" class="input">
+      <input type="submit" value="search" name="submit" class="btn">
+    </form>
+  </section>
 
-  <li> {{result}} </li>
+  {{!-- name || description || homepage || repository_url || language || latest_release_number --}}
 
-</ul>
-{{/if}}
+  {{#if result}}
+  <div class="data-box">
+    <div class="data-box__title">
+      <h2>{{result.name}}</h2>
+      <p>{{result.description}}</p>
+    </div>
+
+    <ul class="data-box__list">
+      <li><a href={{result.homepage}} target="_blank">Go to Homepage</a></li>
+      <li><a href={{result.repository_url}} target="_blank">Go to Repository</a></li>
+      <li>{{result.language}}</li>
+      <li>{{result.latest_release_number}}</li>
+    </ul>
+
+  </div>
+
+  {{/if}}
+</main>
