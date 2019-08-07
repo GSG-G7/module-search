@@ -2,7 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 
-const router = require('./controllers')
+const router = require('./controllers');
 
 const app = express();
 
@@ -19,16 +19,15 @@ app.engine(
   exphbs({
     extname: 'hbs',
     layoutsDir: path.join(__dirname, 'views', 'layouts'),
-    partialsDir: path.join(__dirname, 'views', 'partials'),
     defaultLayout: 'main',
-  })
-)
+  }),
+);
 
 app.get('/', (req, res) => {
-  res.render("home")
-})
+  res.render('home');
+});
 
-app.use(router)
+app.use(router);
 
 
 module.exports = app;
