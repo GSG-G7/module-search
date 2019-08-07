@@ -1,6 +1,14 @@
 <section class="container">
-  <form>
-    <input type="text" name="input" class="input">
-    <input type="submit" value="search" name="submit" class="btn">
-  </form>
+
+  <input type="text" name="input" class="input">
+  <input type="submit" value="search" name="submit" class="btn">
+
 </section>
+
+{{#if result}}
+<ul>
+
+  <li> {{result}} </li>
+
+</ul>
+{{/if}}
