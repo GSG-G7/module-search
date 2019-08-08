@@ -18,5 +18,27 @@ test('Testing for home route', (t) => {
     .end((err, res) => {
       t.error(err);
       t.end();
-    })
-})
+    });
+});
+
+test('Testing for search route', (t) => {
+  supertest(app)
+    .post('/search')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      t.error(err);
+      t.end();
+    });
+});
+
+test('Testing for client error', (t) => {
+  supertest(app)
+    .get('/test')
+    .expect(404)
+    .expect('Content-Type', /html/)
+    .end((err) => {
+      t.error(err);
+      t.end();
+    });
+});
