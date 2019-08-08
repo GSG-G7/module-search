@@ -1,10 +1,11 @@
 <main class="main">
 
   <section class="container">
-    <form action="/search" method="POST">
-      <input type="text" name="input" class="input" required>
+    <form action="/search" method="POST" id="form" autocomplete="off">
+      <input type="text" name="input" class="input" placeholder="Enter package name" required>
       <input type="submit" value="search" name="submit" class="btn">
     </form>
+    <span class="errorMsg"> </span>
   </section>
 
  
