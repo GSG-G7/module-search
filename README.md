@@ -20,7 +20,7 @@ to get information about any npm packages
 - Handle files by handlebars
 - Handle error from client and server.
 - make a request from front-side by form
-- Make a request form server to our API
+- Make a request from server to our API
 - Render data in hbs file then send file
 - Code Refactor
 - Make style
